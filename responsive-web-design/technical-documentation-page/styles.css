@@ -1,0 +1,14 @@
+#navbar {
+    position: fixed;
+    
+}
+
+main {
+    margin-left: 200px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+}
