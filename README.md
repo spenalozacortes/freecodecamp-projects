@@ -1,2 +1,2 @@
 # freeCodeCamp Projects
-Projects I've completed from the freeCodeCamp curriculum.
+Projects and challenges I've completed from the freeCodeCamp curriculum.
