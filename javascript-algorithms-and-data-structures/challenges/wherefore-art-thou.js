@@ -3,22 +3,16 @@ Make a function that looks through an array of objects (first argument) and retu
 */
 
 function whatIsInAName(collection, source) {
-    let arr = [];
-    const props = Object.keys(source);
-  
-    for(let object of collection) {
-      let objectAdd = true;
-      for(let prop of props) {
-        if(object[prop] !== source[prop]) {
-          objectAdd = false;
-        } 
+    const sourceKeys = Object.keys(source);
+    
+    return collection.filter(obj => {
+      for(let i = 0; i < sourceKeys.length; i++) {
+        if(!obj.hasOwnProperty(sourceKeys[i]) || obj[sourceKeys[i]] !== source[sourceKeys[i]]) {
+          return false;
+        }
       }
-      if(objectAdd) {
-        arr.push(object);
-      }
-    }
-  
-    return arr;
+      return true;
+    });  
   }
   
-  whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 });
+  whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }, { "bat":2 }], { "apple": 1, "bat": 2 });
